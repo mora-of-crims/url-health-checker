@@ -25,8 +25,8 @@ docker compose up --build
 Нужен Node.js 22 или новее.
 
 ```bash
-npm install
-npm run dev
+npm.cmd install
+npm.cmd run dev
 ```
 
 Откройте `http://localhost:5173`. Vite автоматически перенаправляет вызовы `/api` на backend, работающий на порту 3000.
