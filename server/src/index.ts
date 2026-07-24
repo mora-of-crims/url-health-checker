@@ -5,7 +5,11 @@ import { cancelJob, createJob, getJob, listJobs } from './job-store.js';
 
 const app = express();
 app.use(cors()); app.use(express.json());
-const payloadSchema = z.object({ urls: z.array(z.string().url()).min(1).max(500) });
+const httpUrl = z.string().url().refine(
+  (value) => { const protocol = new URL(value).protocol; return protocol === 'http:' || protocol === 'https:'; },
+  'URL must use http or https',
+);
+const payloadSchema = z.object({ urls: z.array(httpUrl).min(1).max(500) });
 
 function summary(job: ReturnType<typeof createJob>) {
   const success = job.urls.filter((item) => item.status === 'success').length;
