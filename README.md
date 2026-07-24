@@ -20,6 +20,12 @@ docker compose up --build
 
 Остановка: `docker compose down`.
 
+## Получение проекта
+
+```bash
+git clone https://github.com/mora-of-crims/url-health-checker.git
+cd url-health-checker
+
 ## Запуск без Docker
 
 Нужен Node.js 22 или новее.
