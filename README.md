@@ -34,8 +34,8 @@ npm.cmd run dev
 Для production-сборки:
 
 ```bash
-npm run build
-npm run start
+npm.cmd run build
+npm.cmd run start
 ```
 
 ## API
